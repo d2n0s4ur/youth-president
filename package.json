@@ -1,0 +1,29 @@
+{
+  "name": "youth-president",
+  "version": "1.0.0",
+  "description": "Make Voice Channel Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node deploy-commands.js; node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d2n0s4ur/youth-president.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discordbot"
+  ],
+  "author": "d2n0s4ur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d2n0s4ur/youth-president/issues"
+  },
+  "homepage": "https://github.com/d2n0s4ur/youth-president#readme",
+  "dependencies": {
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3"
+  }
+}
