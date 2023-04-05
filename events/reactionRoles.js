@@ -1,8 +1,8 @@
 const { Events } = require('discord.js');
 
-const ROLE_NAME = "트수";
-const MSG_ID = "1093037957037953024";
-const EMOJI = "✅";
+const roleList = [
+	["트수", "1093037957037953024", "✅"],
+];
 
 module.exports = {
 	name: Events.MessageReactionAdd,
@@ -17,12 +17,13 @@ module.exports = {
 				return;
 			}
 		}
-		// Now the message has been cached and is fully available
-		if (reaction.message.id == MSG_ID && reaction.emoji.name == EMOJI ) {
-			// grant reaction role
-			const role = reaction.message.guild.roles.cache.find(role => role.name === ROLE_NAME);
-			const member = reaction.message.guild.members.cache.find(member => member.id === user.id);
-			member.roles.add(role);
+		for (TargetRole of roleList) {
+			if (reaction.message.id == TargetRole[1] && reaction.emoji.name == TargetRole[2]) {
+				// grant reaction role
+				const role = reaction.message.guild.roles.cache.find(role => role.name === TargetRole[0]);
+				const member = reaction.message.guild.members.cache.find(member => member.id === user.id);
+				member.roles.add(role);
+			}
 		}
 	}
 };
